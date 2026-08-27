@@ -43,6 +43,9 @@ pipeline {
     }
 
     post {
+        always {
+            sh 'docker logout || true'
+        }
         success {
             echo 'Pipeline completed successfully!'
         }
